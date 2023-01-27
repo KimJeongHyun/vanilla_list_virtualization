@@ -25,7 +25,7 @@ const getPosts = async () => {
     io.observe(elem);
     // intersection observer를 이용한 가상화 방법.
   });
-  //   addEventToEl(elList); // 실제 dom을 조작한 가상화 방법
+  // addEventToEl(elList); // 실제 dom을 조작한 가상화 방법
 };
 
 const io = new IntersectionObserver(
@@ -42,6 +42,9 @@ const io = new IntersectionObserver(
           imgTag.src = data[idx].url;
 
           entry.target.appendChild(imgTag);
+          if (entry.target.elems_index === data.length - 1) {
+            io.disconnect();
+          }
         }, 500);
       }
     });
