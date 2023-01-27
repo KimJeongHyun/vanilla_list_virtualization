@@ -23,8 +23,9 @@ const getPosts = async () => {
   elList.forEach((elem, index) => {
     elem.elems_index = index;
     io.observe(elem);
+    // intersection observer를 이용한 가상화 방법.
   });
-  //   addEventToEl(elList);
+  //   addEventToEl(elList); // 실제 dom을 조작한 가상화 방법
 };
 
 const io = new IntersectionObserver(
@@ -46,7 +47,7 @@ const io = new IntersectionObserver(
     });
   },
   {
-    threshold: 1,
+    threshold: 0.2,
   }
 );
 
