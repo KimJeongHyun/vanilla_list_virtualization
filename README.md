@@ -2,7 +2,7 @@
 
 Vanilla JS로 구현한 리스트 가상화 레포지토리입니다.
 
-## 방법
+##  방법
 
 ### scroll event listener
 
